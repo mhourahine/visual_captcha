@@ -209,7 +209,7 @@ function visual_captcha_actionlist_hook($hook, $entity_type, $returnvalue, $para
 }
 
 function visual_captcha_public_pages($hook, $type, $return_value, $params) {
-	$return_value[] = 'pg/vc_image/[a-z0-9]+\.png';
+	$return_value[] = 'vc_image/[a-z0-9]+\.png';
 	return $return_value;
 }
 
