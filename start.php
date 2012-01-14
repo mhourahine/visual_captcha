@@ -110,6 +110,14 @@ function visual_captcha_page_handler($page) {
 	global $CONFIG;
 
 	if (isset($page[0])) {
+		
+		if ($page[0] == "reset") {
+			admin_gatekeeper();
+			visual_captcha_reset_system();
+			forward(REFERER);
+			return;
+		}
+		
 		$image_token = str_replace('.png', '', $page[0]);
 		$image = visual_captcha_get_image_entity_by_image_token($image_token);
 		$image->display();

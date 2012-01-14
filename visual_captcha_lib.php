@@ -30,6 +30,23 @@ function visual_captcha_get_image_entity_by_image_token($image_token) {
 }
 
 /**
+ * Remove all existing visual captcha objects in system
+ * 
+ */
+function visual_captcha_reset_system() {
+	
+	$vc_objects = elgg_get_entities(array(
+		'type' => 'object',
+		'subtype' => 'visual_captcha',
+		'limit' => 0
+	));
+	
+	foreach ($vc_objects as $vc) {
+		$vc->delete();
+	}
+}
+
+/**
  * Class to simplify displaying of images.
  */
 class ElggVisualCaptchaImage extends ElggObject {
