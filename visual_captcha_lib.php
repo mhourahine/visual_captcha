@@ -110,7 +110,7 @@ class ElggVisualCaptchaImage extends ElggObject {
 	public function getImgURL($instance_token) {
 		global $CONFIG;
 
-		return "{$CONFIG->site->url}pg/vc_image/{$this->getImgToken($instance_token)}.png";
+		return "{$CONFIG->site->url}vc_image/{$this->getImgToken($instance_token)}.png";
 	}
 
 	public function getImgToken($instance_token) {
