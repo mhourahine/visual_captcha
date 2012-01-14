@@ -35,7 +35,7 @@ function visual_captcha_get_image_entity_by_image_token($image_token) {
  */
 function visual_captcha_reset_system() {
 	
-	$vc_objects = elgg_get_entities(array(
+	$vc_objects = new ElggBatch('elgg_get_entities', array(
 		'type' => 'object',
 		'subtype' => 'visual_captcha',
 		'limit' => 0
